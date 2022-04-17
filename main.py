@@ -6,6 +6,7 @@ from time import time
 
 app = FastAPI()
 Message = getData('message.json')
+Trigger = getData('trigger.json')
 
 @app.get("/")
 async def greeting():
@@ -36,4 +37,17 @@ async def post_message(message:RecordMessage):
         saveData('message.json',Message)
         return message
 
+@app.get("/trigger")
+async def get_trigger():
+    return Trigger
 
+@app.patch("/trigger")
+async def patch_trigger(event:TriggerEvent):
+    try:
+        event = event.dict()
+        Trigger['trigger'] = event['trigger']
+    except:
+        return ""
+    else:
+        saveData('trigger.json',Trigger)
+        return Trigger

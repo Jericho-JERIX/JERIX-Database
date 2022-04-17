@@ -9,3 +9,6 @@ class RecordMessage(BaseModel):
     mentions_user: list
     mentions_channel: list
     mentions_role: list
+
+class TriggerEvent(BaseModel):
+    trigger: bool
