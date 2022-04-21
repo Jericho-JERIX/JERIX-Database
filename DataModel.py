@@ -12,3 +12,9 @@ class RecordMessage(BaseModel):
 
 class TriggerEvent(BaseModel):
     trigger: bool
+
+class NewNXOMatch(BaseModel):
+    uid1: str
+    username1: str
+    uid2: str
+    username2: str
