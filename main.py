@@ -1,3 +1,4 @@
+import math
 from unittest import result
 from fastapi import FastAPI
 from FileOp import *
@@ -57,7 +58,11 @@ async def patch_trigger(event:TriggerEvent):
         return Trigger
 
 @app.get("/nextlevelxo")
-async def get_nxo(uid:str):
+async def get_nxo():
+    return NXO
+
+@app.get("/nextlevelxo/uid")
+async def get_nxo_by_uid(uid:str):
     if uid not in NXO['ingame_uid']:
         return {"status":1,"data":None}
     else:
@@ -108,6 +113,47 @@ async def post_newgame(player:NewNXOMatch):
         NXO['ingame_uid'].append(player['uid2'])
         NXO['ingame_pair'][player['uid1']] = gen_matchid
         NXO['ingame_pair'][player['uid2']] = gen_matchid
+        NXO['match_pair'][player['uid1']] = player['uid2']
+        NXO['match_pair'][player['uid2']] = player['uid1']
+    except:
+        return {"result":1,"data":None}
+    else:
+        saveData('nextlevelxo.json',NXO)
+        return {"result":0,"data":data}
+
+@app.patch("/nextlevelxo")
+async def update_game_status(match:UpdateNXOMatch):
+    match = match.dict()
+    try:
+        target = match['match_id']
+        NXO['server'][target] = match
+    except:
+        return {"result":1,"data":None}
+    else:
+        saveData('nextlevelxo.json',NXO)
+        return NXO['server'][target]
+
+@app.patch("/nextlevelxo/disable")
+async def disable_match(uid:str):
+    # print("=============Hello============")
+    try:
+        uid1 = uid
+        uid2 = NXO['match_pair'][uid]
+        match_id = NXO['ingame_pair'][uid]
+        NXO['server'][match_id]['isValid'] = False
+        for i in range(len(NXO['ingame_uid'])):
+            if NXO['ingame_uid'][i] == uid1:
+                NXO['ingame_uid'].pop(i)
+            if NXO['ingame_uid'][i] == uid2:
+                NXO['ingame_uid'].pop(i)
+        NXO['ingame_pair'].pop(uid1)
+        NXO['ingame_pair'].pop(uid2)
+        NXO['match_pair'].pop(uid1)
+        NXO['match_pair'].pop(uid2)
+        # print("=======================")
+        # print(NXO['ingame_uid'],NXO['ingame_pair'],NXO['match_pair'])
+        # print("=======================")
+        data = NXO['server'][match_id]
     except:
         return {"result":1,"data":None}
     else:
