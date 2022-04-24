@@ -137,6 +137,7 @@ async def update_game_status(match:UpdateNXOMatch):
 async def disable_match(uid:str):
     # print("=============Hello============")
     try:
+        # print("==============================================POP=====================================")
         uid1 = uid
         uid2 = NXO['match_pair'][uid]
         match_id = NXO['ingame_pair'][uid]
@@ -144,8 +145,11 @@ async def disable_match(uid:str):
         for i in range(len(NXO['ingame_uid'])):
             if NXO['ingame_uid'][i] == uid1:
                 NXO['ingame_uid'].pop(i)
+                break
+        for i in range(len(NXO['ingame_uid'])):
             if NXO['ingame_uid'][i] == uid2:
                 NXO['ingame_uid'].pop(i)
+                break
         NXO['ingame_pair'].pop(uid1)
         NXO['ingame_pair'].pop(uid2)
         NXO['match_pair'].pop(uid1)
