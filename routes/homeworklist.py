@@ -1,12 +1,8 @@
-from msilib.schema import Error
-import re
 from fastapi import APIRouter
 from FileOp import *
 from model.Homeworklist import *
 from typing import Union
 from datetime import datetime
-from time import time
-
 
 Homeworklist = getData('homeworklist.json')
 
