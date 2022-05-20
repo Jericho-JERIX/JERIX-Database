@@ -1,5 +1,3 @@
-from msilib.schema import Error
-import re
 from fastapi import APIRouter
 from FileOp import *
 from model.Homeworklist import *
