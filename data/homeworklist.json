@@ -34,6 +34,16 @@
             "channelId": "885898083295186944",
             "selected_file": "cpe-homework",
             "enable_notification": true
+        },
+        "977167794070245406": {
+            "channelId": "977167794070245406",
+            "selected_file": "kanonkc",
+            "enable_notification": true
+        },
+        "979080946110332938": {
+            "channelId": "979080946110332938",
+            "selected_file": "cuexpo-2022",
+            "enable_notification": true
         }
     },
     "file": {
@@ -280,7 +290,7 @@
         "juabjarb": {
             "filename": "juabjarb",
             "password": "tonglek",
-            "lastest_id": 4,
+            "lastest_id": 6,
             "data": {
                 "0000": {
                     "id": "0000",
@@ -325,6 +335,119 @@
                     "day_name": "Sunday",
                     "type": "ASSIGNMENT",
                     "label": "sldklw"
+                },
+                "0004": {
+                    "id": "0004",
+                    "isActive": true,
+                    "date": 27,
+                    "month": 6,
+                    "year": 2022,
+                    "timestamp": 1656349199.0,
+                    "day_name": "Monday",
+                    "type": "ASSIGNMENT",
+                    "label": "\u0e04\u0e32\u0e23\u0e32\u0e42\u0e2d\u0e40\u0e01\u0e30"
+                },
+                "0005": {
+                    "id": "0005",
+                    "isActive": true,
+                    "date": 29,
+                    "month": 5,
+                    "year": 2022,
+                    "timestamp": 1653843599.0,
+                    "day_name": "Sunday",
+                    "type": "ALERT",
+                    "label": "\u0e1b\u0e23\u0e30\u0e0a\u0e38\u0e21\u0e2a\u0e23\u0e38\u0e1b\u0e1b\u0e0f\u0e34\u0e1a\u0e31\u0e15\u0e34\u0e01\u0e32\u0e23\u0e23\u0e48\u0e27\u0e21\u0e01\u0e31\u0e19\u0e02\u0e2d\u0e07\u0e04\u0e13\u0e30\u0e1c\u0e39\u0e49\u0e1a\u0e23\u0e34\u0e2b\u0e32\u0e23\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e2a\u0e39\u0e07 \u0e40\u0e19\u0e37\u0e48\u0e2d\u0e07\u0e43\u0e19\u0e27\u0e42\u0e23\u0e01\u0e32\u0e2a\u0e07\u0e32\u0e19\u0e2a\u0e31\u0e21\u0e19\u0e32\u0e19\u0e2d\u0e01\u0e01\u0e23\u0e2d\u0e1a\u0e43\u0e19\u0e2b\u0e31\u0e27\u0e02\u0e49\u0e2d\u0e40\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e40\u0e17\u0e04\u0e42\u0e19\u0e42\u0e25\u0e22\u0e35 \u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e40\u0e15\u0e23\u0e35\u0e22\u0e21\u0e04\u0e27\u0e32\u0e21\u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e43\u0e2b\u0e49\u0e04\u0e13\u0e30\u0e17\u0e33\u0e07\u0e32\u0e19\u0e08\u0e32\u0e01\u0e20\u0e32\u0e22\u0e19\u0e2d\u0e01\u0e41\u0e25\u0e30\u0e1c\u0e39\u0e49\u0e2a\u0e19\u0e31\u0e1a\u0e2a\u0e19\u0e38\u0e19 (3 \u0e17\u0e38\u0e48\u0e21)"
+                }
+            }
+        },
+        "kanonkc": {
+            "filename": "kanonkc",
+            "password": "kanon12345",
+            "lastest_id": 5,
+            "data": {
+                "0000": {
+                    "id": "0000",
+                    "isActive": true,
+                    "date": 28,
+                    "month": 5,
+                    "year": 2022,
+                    "timestamp": 1653757199.0,
+                    "day_name": "Saturday",
+                    "type": "ALERT",
+                    "label": "\u0e07\u0e32\u0e19\u0e40\u0e25\u0e35\u0e49\u0e22\u0e07 Mint Tutor"
+                },
+                "0001": {
+                    "id": "0001",
+                    "isActive": true,
+                    "date": 23,
+                    "month": 5,
+                    "year": 2022,
+                    "timestamp": 1653325199.0,
+                    "day_name": "Monday",
+                    "type": "ALERT",
+                    "label": "\u0e44\u0e1b\u0e2a\u0e27\u0e19\u0e2a\u0e22\u0e32\u0e21"
+                },
+                "0002": {
+                    "id": "0002",
+                    "isActive": true,
+                    "date": 30,
+                    "month": 5,
+                    "year": 2022,
+                    "timestamp": 1653929999.0,
+                    "day_name": "Monday",
+                    "type": "ASSIGNMENT",
+                    "label": "Mint 16.30"
+                },
+                "0003": {
+                    "id": "0003",
+                    "isActive": true,
+                    "date": 1,
+                    "month": 6,
+                    "year": 2022,
+                    "timestamp": 1654102799.0,
+                    "day_name": "Wednesday",
+                    "type": "ASSIGNMENT",
+                    "label": "Mint 16.30"
+                },
+                "0004": {
+                    "id": "0004",
+                    "isActive": true,
+                    "date": 4,
+                    "month": 6,
+                    "year": 2022,
+                    "timestamp": 1654361999.0,
+                    "day_name": "Saturday",
+                    "type": "ASSIGNMENT",
+                    "label": "Mint 13.30"
+                }
+            }
+        },
+        "cuexpo-2022": {
+            "filename": "cuexpo-2022",
+            "password": "cuexpo",
+            "lastest_id": 2,
+            "data": {
+                "0000": {
+                    "id": "0000",
+                    "isActive": true,
+                    "date": 5,
+                    "month": 6,
+                    "year": 2022,
+                    "timestamp": 1654448399.0,
+                    "day_name": "Sunday",
+                    "type": "ASSIGNMENT",
+                    "label": "Qualification Round > Summary PDF 1 \u0e2b\u0e19\u0e49\u0e32, \u0e2a\u0e44\u0e25\u0e14\u0e4c, Video"
+                },
+                "0001": {
+                    "id": "0001",
+                    "isActive": true,
+                    "date": 28,
+                    "month": 5,
+                    "year": 2022,
+                    "timestamp": 1653757199.0,
+                    "day_name": "Saturday",
+                    "type": "ALERT",
+                    "label": "Second Workshop > \u0e40\u0e27\u0e25\u0e32 13.00 - 15.00 (\u0e40\u0e02\u0e49\u0e32\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e19\u0e49\u0e2d\u0e22 1 \u0e04\u0e19)"
                 }
             }
         }
