@@ -12,7 +12,6 @@ router = APIRouter(
 
 @router.get('/youtube/{search}')
 async def get_video(search: str):
-    print(f"***********{search}**********")
     try:
         video_url = getYoutubeVideo(search)
         return {"status":200,"message":"Success!","data": video_url}
