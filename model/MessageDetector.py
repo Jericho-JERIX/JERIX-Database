@@ -9,3 +9,4 @@ class RecordMessage(BaseModel):
     mentions_user:      list
     mentions_channel:   list
     mentions_role:      list
+    message_id:         str
