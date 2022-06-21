@@ -116,7 +116,7 @@ async def get_homework(filename: str,all: Union[bool,None] = False):
             "day_name": i[6],
             "type": i[7],
             "label": i[8]
-        } for i in Homeworklist.execute(f"SELECT * FROM Homework H,File F WHERE H.file_id = F.id and F.id = {file_id[0]} and H.timestamp >= {now} {get_all}").fetchall()
+        } for i in Homeworklist.execute(f"SELECT * FROM Homework H,File F WHERE H.file_id = F.id and F.id = {file_id[0]} and H.timestamp >= {now} {get_all} ORDER BY timestamp,label").fetchall()
     }
 
 @router.post("/")
