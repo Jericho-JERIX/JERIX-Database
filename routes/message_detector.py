@@ -60,25 +60,28 @@ async def get_message():
 
 @router.post("/")
 async def post_message(message:RecordMessage):
-    message = message.dict()
-    Message.execute(f"""
-        INSERT INTO Message ('uid','username','channel_id','content','timestamp','datetime','message_id')
-        VALUES (
-            '{message["uid"]}',
-            '{message["username"]}',
-            '{message["channel"]}',
-            '{message["content"]}',
-            {int(time()*1000)},
-            '{datetime.now()}',
-            '{message["message_id"]}'
-        )
-    """),
-    for i in message["emoji"]:
-        Message.execute(f"""INSERT INTO Emoji VALUES ('{message["message_id"]}','{i}')""")
-    for i in message["mentions_user"]:
-        Message.execute(f"""INSERT INTO MentionUser VALUES ('{message["message_id"]}','{i}')""")
-    for i in message["mentions_channel"]:
-        Message.execute(f"""INSERT INTO MentionChannel VALUES ('{message["message_id"]}','{i}')""")
-    for i in message["mentions_role"]:
-        Message.execute(f"""INSERT INTO MentionRole VALUES ('{message["message_id"]}','{i}')""")
-    db.commit()
+    try:
+        message = message.dict()
+        Message.execute(f"""
+            INSERT INTO Message ('uid','username','channel_id','content','timestamp','datetime','message_id')
+            VALUES (
+                '{message["uid"]}',
+                '{message["username"]}',
+                '{message["channel"]}',
+                '{message["content"]}',
+                {int(time()*1000)},
+                '{datetime.now()}',
+                '{message["message_id"]}'
+            )
+        """),
+        for i in message["emoji"]:
+            Message.execute(f"""INSERT INTO Emoji VALUES ('{message["message_id"]}','{i}')""")
+        for i in message["mentions_user"]:
+            Message.execute(f"""INSERT INTO MentionUser VALUES ('{message["message_id"]}','{i}')""")
+        for i in message["mentions_channel"]:
+            Message.execute(f"""INSERT INTO MentionChannel VALUES ('{message["message_id"]}','{i}')""")
+        for i in message["mentions_role"]:
+            Message.execute(f"""INSERT INTO MentionRole VALUES ('{message["message_id"]}','{i}')""")
+        db.commit()
+    except:
+        pass
