@@ -105,8 +105,8 @@ async def get_homework(filename: str,all: Union[bool,None] = False):
     get_all = ""
     if not all: get_all = "and H.isActive = 1"
     now = datetime.now().timestamp()
-    return {
-        i[0] :{
+    return [
+        {
             "id": str(i[0]),
             "isActive": bool(i[1]),
             "date": int(i[2]),
@@ -116,8 +116,8 @@ async def get_homework(filename: str,all: Union[bool,None] = False):
             "day_name": i[6],
             "type": i[7],
             "label": i[8]
-        } for i in Homeworklist.execute(f"SELECT * FROM Homework H,File F WHERE H.file_id = F.id and F.id = {file_id[0]} and H.timestamp >= {now} {get_all} ORDER BY timestamp,label").fetchall()
-    }
+        } for i in Homeworklist.execute(f"SELECT * FROM Homework H,File F WHERE H.file_id = F.id and F.id = {file_id[0]} and H.timestamp >= {now} {get_all} ORDER BY timestamp,label ASC").fetchall()
+    ]
 
 @router.post("/")
 async def create_file(file: HomeworkFile):
