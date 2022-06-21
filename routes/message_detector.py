@@ -1,4 +1,3 @@
-from sqlite3 import connect
 from tkinter import PIESLICE
 from fastapi import APIRouter
 from FileOp import *
@@ -7,14 +6,8 @@ from datetime import datetime
 from time import time
 import sqlite3
 
-# Message = getData('message.json')
-
 db = sqlite3.connect('./data/JerichoMessage.db')
 Message = db.cursor()
-
-# Attribute = {
-#     "Message": [i[0] for i in Message.execute("SELECT * FROM Message").description]
-# }
 
 router = APIRouter(
     prefix="/jericho-message",
