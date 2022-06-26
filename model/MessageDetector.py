@@ -10,3 +10,4 @@ class RecordMessage(BaseModel):
     mentions_channel:   list
     mentions_role:      list
     message_id:         str
+    attachments:        list

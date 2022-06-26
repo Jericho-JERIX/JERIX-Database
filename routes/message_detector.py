@@ -33,6 +33,7 @@ async def get_message():
         mention_user = db.cursor().execute(f"SELECT user FROM MentionUser WHERE message_id = '{i[7]}'")
         mention_channel = db.cursor().execute(f"SELECT channel FROM MentionChannel WHERE message_id = '{i[7]}'")
         mention_role = db.cursor().execute(f"SELECT role FROM MentionRole WHERE message_id = '{i[7]}'")
+        attachments = db.cursor().execute(f"SELECT link FROM Attachment WHERE message_id = '{i[7]}'")
 
         result.append({
             'id' : i[0],
@@ -44,6 +45,7 @@ async def get_message():
             'mentions_user': [j[0] for j in mention_user],
             'mentions_channel': [j[0] for j in mention_channel],
             'mentions_role': [j[0] for j in mention_role],
+            'attachments': [j[0] for j in attachments],
             'timestamp' : i[5],
             'datetime' : i[6],
             'message_id' : i[7]
@@ -75,6 +77,8 @@ async def post_message(message:RecordMessage):
             Message.execute(f"""INSERT INTO MentionChannel VALUES ('{message["message_id"]}','{i}')""")
         for i in message["mentions_role"]:
             Message.execute(f"""INSERT INTO MentionRole VALUES ('{message["message_id"]}','{i}')""")
+        for i in message["attachments"]:
+            Message.execute(f"""INSERT INTO Attachment VALUES ('{message["message_id"]}','{i}')""")
         db.commit()
     except:
         pass
