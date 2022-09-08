@@ -1,4 +1,3 @@
-from tkinter import PIESLICE
 from fastapi import APIRouter
 from FileOp import *
 from model.MessageDetector import *
